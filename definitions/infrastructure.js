@@ -124,21 +124,19 @@ exports.web = {
   }
 };
 
-//exports.web = {
-//  type: 'docker',
-//  override: {
-//    process: {
-//      type: 'process'
-//    }
-//  },
-//  specific: {
-//    repositoryUrl: 'https://github.com/nearform/sudc-web.git',
-//    processBuild: 'npm install; cd web; npm install; npm install bower; node_modules/.bin/bower install',
-//    ignored: ['.build'],
-//    execute: {
-//      args: '-p 3000:3000 -d',
-//      process: './index.js',
-//      cwd: 'web'
-//    }
-//  }
-//};
+exports.discovery = {
+  type: 'docker',
+  override: {
+    process: {
+      type: 'process'
+    }
+  },
+  specific: {
+    repositoryUrl: 'https://github.com/michael-obrien/zasbb-discovery.git',
+    processBuild: 'npm install',
+    execute: {
+      args: '-d',
+      process: 'discovery.js'
+    }
+  }
+};
