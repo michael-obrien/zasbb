@@ -135,7 +135,7 @@ exports.discovery = {
     repositoryUrl: 'https://github.com/michael-obrien/zasbb-discovery.git',
     processBuild: 'npm install',
     execute: {
-      args: '-d',
+      args: '-d -v /var/run/docker.sock:/var/run/docker.sock',
       process: 'discovery.js'
     }
   }
